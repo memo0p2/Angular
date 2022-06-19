@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Personaje{
-  nombre: string;
-  poder: number;
-}
+import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-main-page',
@@ -12,22 +9,13 @@ interface Personaje{
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
   nuevo: Personaje = {
     nombre: 'Trunks',
     poder: 12000
   }
+  constructor() { }
 
-  cambiarNombre(event: any) {
-    console.log('cambiar nombre');
-  }
-
-  agregar() {
-    console.log(this.nuevo);
-  }
+  ngOnInit(): void {
+  } 
 
 }
