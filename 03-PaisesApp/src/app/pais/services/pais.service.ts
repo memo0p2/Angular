@@ -22,4 +22,14 @@ export class PaisService {
     return this.http.get<ConutriesResponse[]>(url);
   }
 
+  getPaisAlpha(id:string): Observable<ConutriesResponse>{
+    const url=`${this.apiUrl}/alpha/${id}`;
+    return this.http.get<ConutriesResponse>(url);
+  }
+
+  buscarRegion(region:string): Observable<ConutriesResponse[]>{
+    const url=`https://restcountries.com/v2/regionalbloc/${region}`;
+    return this.http.get<ConutriesResponse[]>(url);
+  }
+
 }
