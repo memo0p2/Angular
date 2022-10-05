@@ -75,6 +75,7 @@ const loginUsuario = async(req,res=response)=>{
         return res.status(200).json({
             ok:true,
             uid:DBusuario.id,
+            name:DBusuario.name,
             token
         }) 
         
@@ -93,8 +94,9 @@ const revalidarToken = async(req,res)=>{
     return res.json({
         ok:true,
         msg:'Renew /renew',
-        id:uid,
+        uid:uid,
         name:name,
+        token
         
     })
 }
